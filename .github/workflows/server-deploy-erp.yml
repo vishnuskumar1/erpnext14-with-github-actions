@@ -1,4 +1,4 @@
-name: deploy Erp app
+name: deploy Erp
 
 on:
   push:
