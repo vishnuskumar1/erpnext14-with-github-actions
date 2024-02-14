@@ -25,11 +25,11 @@ jobs:
         APP_SITE_NAME: ${{ secrets.ERP_SITE_NAME }}
 
         # access point url ip [server ip address]
-        ERP_SITE_HOST: ${{ secrets.SSH_HOST }}
+        ERP_SITE_HOST: ${{ secrets.HOST_NAME }}
       with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
-        password: ${{ secrets.SSH_PASSWORD }}
+        host: ${{ secrets.HOST_NAME }}
+        username: root
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         timeout: 1700s
         envs: MYSQL_ROOT_PASSWORD,MYSQL_ROOT_USER,ADMIN_PASSWORD,APP_SITE_NAME,ERP_SITE_HOST
         
