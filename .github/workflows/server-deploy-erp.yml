@@ -52,6 +52,9 @@ jobs:
             # CREATE NETWORK
             docker network create erpnet
 
+            docker stop erpdb && docker rm erpdb || true
+            docker stop erp && docker rm erp || true
+
             # RUN MARIADB CONTAINER
             docker run -it  --net erpnet --name erpdb -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD -v $(pwd)/conf:/etc/mysql/conf.d -d 1devops2/erpnext14-with-github-actions:db
             sleep 10
