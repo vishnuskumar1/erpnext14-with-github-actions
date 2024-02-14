@@ -50,6 +50,7 @@ jobs:
             cd erpnext14-with-github-actions
            
             # CREATE NETWORK
+            docker network rm erpnet || true
             docker network create erpnet
 
             docker stop erpdb && docker rm erpdb || true
